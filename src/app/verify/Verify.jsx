@@ -12,7 +12,7 @@ export default function VerifyPage() {
 
   const verifyPayment = async () => {
    try {
-       const response = await axios.post('http://localhost:3000/api/order/verify', {success, orderId})
+       const response = await axios.post('https://picko-nu.vercel.app/api/order/verify', {success, orderId})
            // verify?success=true&orderId=680769756ddc5936f08c0ec9
 
     if(response.data.message === 'Paid'){

@@ -1,10 +1,10 @@
 'use client'
 import "./globals.css";
 import StoreContextProvider from "./context/StoreContext";
-import Footer from "./copmonents/footer/page";
-import Navbar from "./copmonents/navbar/page";
+import Footer from "./copmonents/footer/Footer";
+import Navbar from "./copmonents/navbar/Navbar";
 import { useState } from "react";
-import Login from '@/app/login/page'
+import Login from '@/app/login/Login'
 import { usePathname } from 'next/navigation'
 
 // const geistSans = Geist({

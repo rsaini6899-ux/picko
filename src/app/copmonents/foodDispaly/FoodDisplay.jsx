@@ -1,7 +1,7 @@
 'use client'
 import React, { useContext } from 'react'
 import { StoreContext } from '../../context/StoreContext'
-import FoodItem from '@/app/copmonents/foodItem/page'
+import FoodItem from '@/app/copmonents/foodItem/FoodItem'
 
 function FoodDispaly({category}) {
     const {food_list} = useContext(StoreContext)

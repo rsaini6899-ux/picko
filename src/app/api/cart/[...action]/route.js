@@ -1,7 +1,5 @@
 import { NextResponse } from "next/server";
 import User from "../../../../models/user";
-import bcrypt from "bcrypt";
-import jwt from "jsonwebtoken";
 import { connect } from "../../../../lib/db";
 import { authUser } from "../../../../middleware/userAuth";
 

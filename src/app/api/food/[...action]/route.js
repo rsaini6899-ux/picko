@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 import path from "path";
-import fs from "fs";
-import { writeFile } from "fs/promises";
+import fs from "fs";;
 import Food from "@/models/food";
 import { connect } from "@/lib/db";
 

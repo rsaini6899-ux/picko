@@ -116,7 +116,7 @@ export async function POST(req) {
       try {
         const {orderId, status} = await req.json()
 
-       const order = await Order.findByIdAndUpdate(orderId, {status})
+       await Order.findByIdAndUpdate(orderId, {status})
 
        return NextResponse.json({message: 'status update successfully'}, { status: 200 })
 

@@ -10,7 +10,7 @@ function FoodItem({ id, name, price, description, image }) {
   return (
     <div className="m-auto rounded-2xl shadow-xl transition duration-500 ">
       <div className="relative">
-        <img className="rounded-tl-2xl rounded-tr-2xl" src={`http://localhost:3000/uploads/${image}`} alt="" />
+        <img className="rounded-tl-2xl rounded-tr-2xl" src={`https://picko-nu.vercel.app/uploads/${image}`} alt="" />
         {!cartItems[id] ? (
           <img
             className="w-[35px] absolute bottom-[15px] right-[15px] cursor-pointer"

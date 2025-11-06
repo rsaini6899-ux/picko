@@ -17,9 +17,15 @@ function Login({setShowLogin}) {
     setData({...data, [e.target.name] : (e.target.value)})
   }
 
+  const BASE_URL =
+  process.env.NODE_ENV === 'development'
+    ? 'http://localhost:3001'
+    : 'https://picko-nu.vercel.app';
+
+
   const onLogin = async (e) => {
     e.preventDefault()
-    let url = 'https://picko-nu.vercel.app/api/user/'
+    let url = `${BASE_URL}/api/user/`
     if(currState === 'Login') {
         url += 'login'
     }else{

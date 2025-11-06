@@ -41,7 +41,7 @@ function PlaceOrder() {
       amount: getTotalCartAmount()+2
     }
 
-    const response = await axios.post('http://localhost:3000/api/order/place', orderData, {headers: {Authorization: `Bearer ${token}`,}})
+    const response = await axios.post('https://picko-nu.vercel.app/api/order/place', orderData, {headers: {Authorization: `Bearer ${token}`,}})
 
     const {session_url} = response.data
     window.location.replace(session_url)

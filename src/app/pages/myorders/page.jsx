@@ -10,7 +10,7 @@ function MyOrder() {
 
   const fetchOrders = async () => {
     const response = await axios.post(
-      "http://localhost:3000/api/order/userOrders",
+      "https://picko-nu.vercel.app/api/order/userOrders",
       {},
       {
         headers: {

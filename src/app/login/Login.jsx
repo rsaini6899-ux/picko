@@ -19,7 +19,7 @@ function Login({setShowLogin}) {
 
   const onLogin = async (e) => {
     e.preventDefault()
-    let url = 'http://localhost:3000/api/user/'
+    let url = 'https://picko-nu.vercel.app/api/user/'
     if(currState === 'Login') {
         url += 'login'
     }else{

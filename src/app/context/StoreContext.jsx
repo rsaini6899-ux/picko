@@ -18,7 +18,7 @@ const StoreContextProvider = (props) => {
     }
     if (token) {
       const response = await axios.post(
-        "http://localhost:3000/api/cart/add",
+        "https://picko-nu.vercel.app/api/cart/add",
         { itemId },
         {
           headers: {
@@ -33,7 +33,7 @@ const StoreContextProvider = (props) => {
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
     if (token) {
       const response = await axios.delete(
-        "http://localhost:3000/api/cart/remove",
+        "https://picko-nu.vercel.app/api/cart/remove",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -57,14 +57,14 @@ const StoreContextProvider = (props) => {
 
   const fetchFoodList = async () => {
     const response = await axios.get(
-      "http://localhost:3000/api/food/getFoodList"
+      "https://picko-nu.vercel.app/api/food/getFoodList"
     );
     setFoodList(response.data);
   };
 
   const loadCartData = async (token) => {
     const response = await axios.get(
-      "http://localhost:3000/api/cart/get",{
+      "https://picko-nu.vercel.app/api/cart/get",{
         headers: {
           Authorization: `Bearer ${token}`,
         }, 

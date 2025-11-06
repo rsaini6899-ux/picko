@@ -25,7 +25,7 @@ function Add() {
         formData.append('category', data.category)
         formData.append('image', image)
        
-        const response = await axios.post('http://localhost:3000/api/food/addFood', formData)
+        const response = await axios.post('https://picko-nu.vercel.app/api/food/addFood', formData)
 
         setData({
             name : '',

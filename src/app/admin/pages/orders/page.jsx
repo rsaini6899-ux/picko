@@ -7,7 +7,7 @@ function Orders() {
   const [orders, setOrders] = useState([]);
 
   const fetchAllOrders = async () => {
-    const response = await axios.get("http://localhost:3000/api/order/list");
+    const response = await axios.get("https://picko-nu.vercel.app/api/order/list");
     setOrders(response.data);
   };
 
@@ -15,7 +15,7 @@ function Orders() {
     const data = {
       
     }
-    const response = await axios.post('http://localhost:3000/api/order/status', {orderId, status: e.target.value})
+    const response = await axios.post('https://picko-nu.vercel.app/api/order/status', {orderId, status: e.target.value})
     await fetchAllOrders()
   }
 

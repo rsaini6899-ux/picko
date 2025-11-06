@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import path from "path";
-import fs from "fs";;
+import fs from "fs";
 import Food from "@/models/food";
 import { connect } from "@/lib/db";
 
@@ -82,23 +82,50 @@ export async function POST(req) {
   return NextResponse.json({ error: "Not Found" }, { status: 404 });
 }
 
+// export async function GET(req) {
+//   const action = getActionFromURL(req);
+//   if (action === "getFoodList") {
+//     try {
+//       await connect();
+//       const foods = await Food.find();
+
+//       if (!foods) throw new Error("food list not found");
+
+//       return NextResponse.json(foods, { status: 200 });
+//     } catch (error) {
+//       console.error(error);
+//       return NextResponse.json(error.message, { status: 500 });
+//     }
+//   }
+//   return NextResponse.json({ error: "Not Found" }, { status: 404 });
+// }
+const headers = {
+  "Access-Control-Allow-Origin": "*", // ya apka frontend URL
+  "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+  "Access-Control-Allow-Headers": "Content-Type",
+};
+
 export async function GET(req) {
+  if (req.method === "OPTIONS") {
+    return new Response(null, { status: 204, headers });
+  }
+
   const action = getActionFromURL(req);
+
   if (action === "getFoodList") {
     try {
       await connect();
       const foods = await Food.find();
-
-      if (!foods) throw new Error("food list not found");
-
-      return NextResponse.json(foods, { status: 200 });
-    } catch (error) {
-      console.error(error);
-      return NextResponse.json(error.message, { status: 500 });
+      return new Response(JSON.stringify(foods), { status: 200, headers });
+    } catch (err) {
+      console.error(err);
+      return new Response(JSON.stringify({ error: err.message }), { status: 500, headers });
     }
   }
-  return NextResponse.json({ error: "Not Found" }, { status: 404 });
+
+  return new Response(JSON.stringify({ error: "Not Found" }), { status: 404, headers });
 }
+
 
 export async function DELETE(req) {
   const action = getActionFromURL(req);

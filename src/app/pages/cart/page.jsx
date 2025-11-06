@@ -29,7 +29,7 @@ function Cart() {
             return (
               <div>
               <div className='flex justify-between items-center text-black p-2 text-xl'>
-               <img className='w-[50px]' src={`http://localhost:3000/uploads/${item.image}`} alt="" />
+               <img className='w-[50px]' src={`https://picko-nu.vercel.app/uploads/${item.image}`} alt="" />
                <p className=''>{item.name}</p>
                <p className=''>${item.price}</p>
                <p>{cartItems[item._id]}</p>

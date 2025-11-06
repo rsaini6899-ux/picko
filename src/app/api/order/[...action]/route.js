@@ -19,7 +19,7 @@ export async function POST(req) {
     if(action === 'place') {
         try {
 
-            const frontend_url = 'http://localhost:3000'
+            const frontend_url = 'https://picko-nu.vercel.app'
 
             const { user, error, status } = await authUser(req)
 

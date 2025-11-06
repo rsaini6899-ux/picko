@@ -174,7 +174,7 @@ const StoreContextProvider = (props) => {
 
   const fetchFoodList = async () => {
     try {
-      const response = await axios.get(`${BASE_URL}/api/food/getFoodList`);
+      const response = await axios.get(`https://picko-nu.vercel.app/api/food/getFoodList`);
       setFoodList(response.data);
     } catch (error) {
       console.error("Error fetching food list:", error.message);

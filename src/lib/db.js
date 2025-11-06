@@ -50,16 +50,17 @@
 
 import mongoose from "mongoose";
 
-export const connect = async () => {
+export async function connect() {
+  if (mongoose.connection.readyState === 1) return;
+
   try {
-    if (mongoose.connection.readyState === 1) return;
     await mongoose.connect(process.env.MONGODB_URI, {
-      dbName: "picko",
+      dbName: "picko", // ensure database name
     });
     console.log("✅ MongoDB connected successfully");
   } catch (error) {
     console.error("❌ MongoDB connection error:", error);
   }
-};
+}
 
 

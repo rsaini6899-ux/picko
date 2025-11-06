@@ -12,7 +12,7 @@ const StoreContextProvider = (props) => {
 
    const BASE_URL =
   process.env.NODE_ENV === 'development'
-    ? 'http://localhost:3001'
+    ? 'https://picko-nu.vercel.app''
     : 'https://picko-nu.vercel.app';
 
 

@@ -124,7 +124,8 @@ const StoreContextProvider = (props) => {
   const [food_list, setFoodList] = useState([]);
 
   // ✅ Correct base URL logic
-  const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
+  const BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://picko-nu.vercel.app';
+
     // process.env.NODE_ENV === "development"
     //   ? "http://localhost:3000"
     //   : "https://picko-nu.vercel.app";

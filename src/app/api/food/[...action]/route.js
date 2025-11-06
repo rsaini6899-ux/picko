@@ -100,7 +100,7 @@ export async function POST(req) {
 //   return NextResponse.json({ error: "Not Found" }, { status: 404 });
 // }
 const headers = {
-  "Access-Control-Allow-Origin": "*", // ya apka frontend URL
+  "Access-Control-Allow-Origin": "https://picko-nu.vercel.app/", // ya apka frontend URL
   "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
   "Access-Control-Allow-Headers": "Content-Type",
 };
